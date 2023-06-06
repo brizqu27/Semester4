@@ -1,0 +1,2 @@
+public class keg2 {
+}
