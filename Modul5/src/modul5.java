@@ -1,6 +1,3 @@
-package Modul5;
-
-import java.sql.Struct;
 import java.util.Scanner;
 
 class Node{
@@ -38,36 +35,36 @@ class BinaryTree {
         return  root;
     }
 
-    void inorder(Node node){
+    void inorderTraversal(Node node){
         if (node != null){
-            inorder(node.left);
-            System.out.println(node.data + " ");
-            inorder(node.right);
+            inorderTraversal(node.left);
+            System.out.print(node.data + " ");
+            inorderTraversal(node.right);
         }
     }
 
 
-    void preorder(Node node){
+    void preorderTraversal(Node node){
         if (node != null){
-            System.out.println(node.data + " ");
-            preorder(node.left);
-            preorder(node.right);
+            System.out.print(node.data + " ");
+            preorderTraversal(node.left);
+            preorderTraversal(node.right);
         }
     }
 
-    void postorder(Node node){
+    void postorderTraversal(Node node){
         if (node != null) {
-            postorder(node.left);
-            postorder(node.right);
-            System.out.println(node.data + " ");
+            postorderTraversal(node.left);
+            postorderTraversal(node.right);
+            System.out.print(node.data + " ");
         }
     }
 
     void drawTree(Node node, String prefix, boolean isLeft){
         if (node != null){
-            drawTree(node.right, prefix + (isLeft? "│   " : "    "), false);
-            System.out.println(prefix + (isLeft? "└── " : "┌── ") + node.data);
-            drawTree(node.left, prefix + (isLeft? "    " : "│   "), true);
+            drawTree(node.right, prefix + (isLeft ? "│   " : "    "), false);
+            System.out.println(prefix + (isLeft ? "└── " : "┌── ") + node.data);
+            drawTree(node.left, prefix + (isLeft ? "    " : "│   "), true);
         }
     }
 
@@ -79,7 +76,7 @@ class BinaryTree {
 public class modul5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Input Kombinasi Elemen (Pisahkan Dengan Spasi) : ");
+        System.out.print("Input Combination Element : ");
         String inputCombination = scanner.nextLine();
         String[] elements = inputCombination.split(" ");
 
@@ -91,11 +88,11 @@ public class modul5 {
         System.out.println("\nBinary Tree : ");
         binaryTree.printTree();
 
-        System.out.println("\nPre-order : ");
-        binaryTree.preorder(binaryTree.root);
-        System.out.println("\nIn-Order : ");
-        binaryTree.inorder(binaryTree.root);
+        System.out.println("\nPre-order  : ");
+        binaryTree.preorderTraversal(binaryTree.root);
+        System.out.println("\nIn-Order   : ");
+        binaryTree.inorderTraversal(binaryTree.root);
         System.out.println("\nPost-Order : ");
-        binaryTree.postorder(binaryTree.root);
+        binaryTree.postorderTraversal(binaryTree.root);
     }
 }
