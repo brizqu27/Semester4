@@ -1,3 +1,4 @@
+package Tugas;
 import java.util.*;
 
 class DFSTraversal {
@@ -11,25 +12,25 @@ class DFSTraversal {
 
         for (int i = 0; i < V; i++)
             adj[i] = new LinkedList<Integer>();
-        }
+    }
 
-        //Adding an edge to the graph
-        void insertEdge( int src, int dest){
-            adj[src].add(dest);
-        }
+    //Adding an edge to the graph
+    void insertEdge( int src, int dest){
+        adj[src].add(dest);
+    }
 
-        void DFS ( int vertex){
-            visited[vertex] = true;         //Mark the current node as visited
-            System.out.print(vertex + " ");
+    void DFS ( int vertex){
+        visited[vertex] = true;         //Mark the current node as visited
+        System.out.print(vertex + " ");
 
-            Iterator<Integer> it = adj[vertex].listIterator();
-            while (it.hasNext()) {
-                int n = it.next();
-                if (!visited[n]) {
-                    DFS(n);
-                }
+        Iterator<Integer> it = adj[vertex].listIterator();
+        while (it.hasNext()) {
+            int n = it.next();
+            if (!visited[n]) {
+                DFS(n);
             }
         }
+    }
 
 
     public static void main(String[] args) {
@@ -50,4 +51,5 @@ class DFSTraversal {
         graph.DFS(0);
     }
 }
+
 

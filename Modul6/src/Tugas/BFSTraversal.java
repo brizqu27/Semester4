@@ -1,4 +1,4 @@
-import java.io.*;
+package Tugas;
 import java.util.*;
 
 public class BFSTraversal {
